@@ -11,5 +11,5 @@ export class OutputComponent implements OnInit {
   ngOnInit() {
     this.wordOfTheDay.next('Heatwave');
   }
-
 }
+
