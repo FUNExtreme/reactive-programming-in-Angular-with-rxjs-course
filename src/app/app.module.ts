@@ -12,6 +12,10 @@ import { RouterComponent } from './observables-in-angular/router/router.componen
 import { OutputComponent } from './observables-in-angular/output/output.component';
 import { ReactiveFormsComponent } from './observables-in-angular/reactive-forms/reactive-forms.component';
 import { HttpClientComponent } from './observables-in-angular/http-client/http-client.component';
+import { DataUnsubscribeComponent } from './observables-subscriptions/data-unsubscribe/data-unsubscribe.component';
+import { DataTakeUntilComponent } from './observables-subscriptions/data-take-until/data-take-until.component';
+import { DataAsyncPipeComponent } from './observables-subscriptions/data-async-pipe/data-async-pipe.component';
+import { OperatorUppercaseComponent } from './observables-operators-custom/operator-uppercase/operator-uppercase.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { HttpClientComponent } from './observables-in-angular/http-client/http-c
     RouterComponent,
     OutputComponent,
     ReactiveFormsComponent,
-    HttpClientComponent
+    HttpClientComponent,
+    DataUnsubscribeComponent,
+    DataTakeUntilComponent,
+    DataAsyncPipeComponent,
+    OperatorUppercaseComponent
   ],
   imports: [
     BrowserModule,
