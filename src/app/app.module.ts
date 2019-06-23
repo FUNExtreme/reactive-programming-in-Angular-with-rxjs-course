@@ -16,6 +16,8 @@ import { DataUnsubscribeComponent } from './observables-subscriptions/data-unsub
 import { DataTakeUntilComponent } from './observables-subscriptions/data-take-until/data-take-until.component';
 import { DataAsyncPipeComponent } from './observables-subscriptions/data-async-pipe/data-async-pipe.component';
 import { OperatorUppercaseComponent } from './observables-operators-custom/operator-uppercase/operator-uppercase.component';
+import { ObservableHotComponent } from './observables-hot-cold/observable-hot/observable-hot.component';
+import { ObservableColdComponent } from './observables-hot-cold/observable-cold/observable-cold.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { OperatorUppercaseComponent } from './observables-operators-custom/opera
     DataUnsubscribeComponent,
     DataTakeUntilComponent,
     DataAsyncPipeComponent,
-    OperatorUppercaseComponent
+    OperatorUppercaseComponent,
+    ObservableHotComponent,
+    ObservableColdComponent
   ],
   imports: [
     BrowserModule,
