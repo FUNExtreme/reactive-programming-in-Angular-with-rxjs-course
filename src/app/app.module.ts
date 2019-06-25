@@ -19,6 +19,7 @@ import { OperatorUppercaseComponent } from './observables-operators-custom/opera
 import { ObservableHotComponent } from './observables-hot-cold/observable-hot/observable-hot.component';
 import { ObservableColdComponent } from './observables-hot-cold/observable-cold/observable-cold.component';
 import { DataNoUnsubscribeComponent } from './observables-subscriptions/data-no-unsubscribe/data-no-unsubscribe.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { DataNoUnsubscribeComponent } from './observables-subscriptions/data-no-
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
