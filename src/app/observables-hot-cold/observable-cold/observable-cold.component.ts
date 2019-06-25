@@ -9,12 +9,18 @@ import { takeUntil } from 'rxjs/operators';
 export class ObservableColdComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject();
 
-  intervalHot$ = interval();
+  intervalCold$ = interval();
 
   ngOnInit(): void {
-    this.intervalHot$
+    this.intervalCold$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((currentInterval: number) => console.log(currentInterval));
+      .subscribe((currentInterval: number) => console.log('subscribe 1', currentInterval));
+
+    setTimeout(() => {
+      this.intervalCold$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((currentInterval: number) => console.log('subscribe 2: ', currentInterval));
+    }, 2000);
   }
 
   ngOnDestroy(): void {

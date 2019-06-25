@@ -14,7 +14,13 @@ export class ObservableHotComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.intervalHot$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((currentInterval: number) => console.log(currentInterval));
+      .subscribe((currentInterval: number) => console.log('subscribe 1', currentInterval));
+
+    setTimeout(() => {
+      this.intervalHot$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((currentInterval: number) => console.log('subscribe 2: ', currentInterval));
+    }, 2000);
   }
 
   ngOnDestroy(): void {
