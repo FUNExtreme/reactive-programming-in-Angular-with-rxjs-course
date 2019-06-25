@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-operator-uppercase',
-  templateUrl: '{{ uppercaseName$ | async }}'
+  template: '{{ uppercaseName$ | async }}'
 })
 export class OperatorUppercaseComponent {
 
