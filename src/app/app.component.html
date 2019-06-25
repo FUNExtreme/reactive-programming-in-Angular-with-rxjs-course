@@ -1,31 +1,40 @@
 <h1>Hi!</h1>
-<div>
-    <h2>Observables in Angular</h2>
-    <a routerLink="observables-in-angular/http-client">Http Client</a>
-    <a routerLink="observables-in-angular/output">Output</a>
-    <a routerLink="observables-in-angular/reactive-forms">Reactive Forms</a>
-    <a routerLink="observables-in-angular/router">Router</a>
-  </div>
-<div>
-  <h2>Unsubscribing by example</h2>
-  <a routerLink="observables-subscriptions/no-unsubscribe">No unsubscribe (bad practice)</a>
-  <a routerLink="observables-subscriptions/async-pipe">Async pipe</a>
-  <a routerLink="observables-subscriptions/take-until">Take until</a>
-  <a routerLink="observables-subscriptions/unsubscribe">Unsubscribe</a>
-</div>
-<div>
-    <h2>Hot vs cold</h2>
-    <a routerLink="observables-hot-cold/cold">Cold</a>
-    <a routerLink="observables-hot-cold/hot">Hot</a>
-</div>
-<div>
-    <h2>Custom Operator</h2>
-    <a routerLink="observables-operators-custom/uppercase">Uppercase</a>
-</div>
-<div>
-  <h2>Example</h2>
-  <a routerLink="starships">Starships</a>
-  <a routerLink="starships-dirty">Starships Dirty</a>
+
+<div class="menu">
+  <button mat-button [matMenuTriggerFor]="observablesInAngularMenu">Observables in Angular</button>
+  <mat-menu #observablesInAngularMenu="matMenu">
+    <a mat-menu-item routerLink="observables-in-angular/http-client">Http Client</a>
+    <a mat-menu-item routerLink="observables-in-angular/output">Output</a>
+    <a mat-menu-item routerLink="observables-in-angular/reactive-forms">Reactive Forms</a>
+    <a mat-menu-item routerLink="observables-in-angular/router">Router</a>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="observablesUnsubscribing">Observables Unsubscribing</button>
+  <mat-menu #observablesUnsubscribing="matMenu">
+    <a mat-menu-item routerLink="observables-subscriptions/no-unsubscribe">No unsubscribe (bad practice)</a>
+    <a mat-menu-item routerLink="observables-subscriptions/async-pipe">Async pipe</a>
+    <a mat-menu-item routerLink="observables-subscriptions/take-until">Take until</a>
+    <a mat-menu-item routerLink="observables-subscriptions/unsubscribe">Unsubscribe</a>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="observablesHotCold">Observables Hot vs cold</button>
+  <mat-menu #observablesHotCold="matMenu">
+    <a mat-menu-item routerLink="observables-hot-cold/cold">Cold</a>
+    <a mat-menu-item routerLink="observables-hot-cold/hot">Hot</a>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="customOperator">Custom Operator</button>
+  <mat-menu #customOperator="matMenu">
+    <a mat-menu-item routerLink="observables-operators-custom/uppercase">Uppercase</a>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="example">Example</button>
+  <mat-menu #example="matMenu">
+    <a mat-menu-item routerLink="starships">Starships</a>
+    <a mat-menu-item routerLink="starships-dirty">Starships Dirty</a>
+  </mat-menu>
 </div>
 
-<router-outlet></router-outlet>
+<div class="example-components-body">
+  <router-outlet></router-outlet>
+</div>
