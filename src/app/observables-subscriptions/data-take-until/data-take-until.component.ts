@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { of, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { of, Subject, interval } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-data-take-until',
@@ -9,12 +9,12 @@ import { takeUntil } from 'rxjs/operators';
 export class DataTakeUntilComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject();
 
-  private name$ = of('Robin Maenhaut');
+  private interval$ = interval(1000).pipe(tap((currentInterval: number) => console.log(currentInterval)));
 
   ngOnInit(): void {
-    this.name$
+    this.interval$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((name: string) => console.log(name));
+      .subscribe();
   }
 
   ngOnDestroy(): void {

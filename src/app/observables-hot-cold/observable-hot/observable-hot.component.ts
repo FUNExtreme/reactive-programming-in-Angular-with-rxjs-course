@@ -9,7 +9,7 @@ import { share, takeUntil } from 'rxjs/operators';
 export class ObservableHotComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject();
 
-  intervalHot$ = interval().pipe(share());
+  intervalHot$ = interval(1000).pipe(share());
 
   ngOnInit(): void {
     this.intervalHot$

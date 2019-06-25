@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
+import { of, interval } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-data-async-pipe',
-  template: '{{ name$ | async }}'
+  template: '{{ interval$ | async }}'
 })
 export class DataAsyncPipeComponent {
-  name$ = of('Robin Maenhaut');
+  interval$ = interval(1000).pipe(tap((currentInterval: number) => console.log(currentInterval)));
 }

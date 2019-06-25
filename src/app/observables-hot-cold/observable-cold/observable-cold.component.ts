@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
 export class ObservableColdComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject();
 
-  intervalCold$ = interval();
+  intervalCold$ = interval(1000);
 
   ngOnInit(): void {
     this.intervalCold$
